@@ -15,7 +15,7 @@ class App
 
     function checkRequest($request)
     {
-        if(!$this->isController($request["controller"]) || !$this->isActionOnController($request["controller"], $request["action"])) {
+        if(!$this->isController($request["controller"])) {
             $request = [
                 "controller" => "error",
                 "action" => "404"
@@ -42,20 +42,30 @@ class App
 
     function execRequest($request)
     {
+        $controllerName = $request['controller'];
+        $actionName = $request['action'];
 
+        $controller = $this->getController($controllerName);
+
+        if(!$this->isActionOnController($controller, $actionName)) {
+            die("Action not found!");
+        }
+
+        $this->execActionOnController($controller, $actionName);
     }
 
     public function getController($controller)
     {
-        require(CONFIG["core"]["controllers"] . $controller . ".php");
-        $controller = new $controller;
-        $controller->onLoad($this);
+        $controllerName = $controller . "Controller";
+        require(CONFIG["core"]["controllers"] . "/" . $controller . ".php");
+        $controller = new $controllerName;
+        //$controller->onLoad($this);
         return $controller;
     }
 
     public function isController($controller)
     {
-        return file_exists(CONFIG["core"]["controllers"] . $controller . ".php");
+        return file_exists(CONFIG["core"]["controllers"] . "/" . $controller . ".php");
     }
 
     public function isActionOnController($controller, $action)
@@ -63,14 +73,20 @@ class App
         return method_exists($controller, "_" . $action);
     }
 
+    public function execActionOnController($controller, $action)
+    {
+        $actionF = "_" . $action;
+        return $controller->$actionF();
+    }
+
     public function getService($service)
     {
-        require(CONFIG["core"]["services"] . $service . ".php");
+        require(CONFIG["core"]["services"] . "/" . $service . ".php");
         return new $service;
     }
 
     public function isService($service)
     {
-        return file_exists(CONFIG["core"]["services"] . $service . ".php");
+        return file_exists(CONFIG["core"]["services"] . "/" . $service . ".php");
     }
 }
