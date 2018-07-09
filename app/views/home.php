@@ -25,17 +25,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Past boxes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Pricing</a>
-                </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
+                <a class="nav-link disabled" href="#">Register</a>
                 <a class="nav-link disabled" href="#">Login</a>
             </form>
         </div>
@@ -55,32 +47,6 @@
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
 
         <!-- START THE FEATURETTES -->
 
@@ -88,11 +54,12 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <h2 class="featurette-heading">What is in a Box? <span class="text-muted">It'll smoke out your head.</span></h2>
+                <p class="lead">Shoyeido Japanese Incense
+                    Shoyeido has been creating the world's finest natural incense products for over 300 years. Working with an array of hand-selected herbs, woods and spices, our skilled artisans formulate unique scents for all occasions. All of their products in our box.</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="/img/1.jpg" alt="1">
             </div>
         </div>
 
@@ -100,11 +67,11 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <h2 class="featurette-heading">Worth the money! <span class="text-muted">See for yourself.</span></h2>
+                <p class="lead">A box is always worth double of the money you pay for one box.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="/img/2.jpg" alt="2">
             </div>
         </div>
 
@@ -112,11 +79,11 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <h2 class="featurette-heading">And lastly, we have what you need. <span class="text-muted">Really.</span></h2>
+                <p class="lead">Just buy our box. Please?</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="/img/3.jpg" alt="Generic placeholder image">
             </div>
         </div>
 
@@ -126,11 +93,66 @@
 
     </div><!-- /.container -->
 
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Subscribtion</h1>
+        <p class="lead">Here are our subcribtion options. You pay every 1. of the new month when your sub starts.</p>
+    </div>
+
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Mausu </h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">24.95 Fr. <small class="text-muted">/1 mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Renews every month</li>
+                        <li>Basic Box with 5 incenses</li>
+                        <li>Booklet with all descriptions to your incense</li>
+                        <li>A cute postcard</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Subscribe</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Nousagi</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">49.95 Fr. <small class="text-muted">/3 mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Renews every 3 month</li>
+                        <li>Box with 5 incenses</li>
+                        <li>Booklet with all descriptions to your incense</li>
+                        <li>Little gift in every box for this option</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Subscribe</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Shika</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">69.95 Fr. <small class="text-muted">/6 mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Renews every 6 month</li>
+                        <li>Box with 5 incenses</li>
+                        <li>Booklet with all descriptions to your incense</li>
+                        <li>Wooden Piece in every box</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary ">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <!-- FOOTER -->
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy;2018 Schmid&Bacher, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
 </main>
 
