@@ -5,8 +5,8 @@ class BasicRouter extends Router
     public function route($uri)
     {
         return [
-            "controller" => $_GET["controller"],
-            "action" => $_GET["action"],
+            "controller" => !empty($_GET["controller"]) ? $_GET["controller"] : CONFIG["core"]["default"]["controller"],
+            "action" => !empty($_GET["action"]) ? $_GET["action"] : CONFIG["core"]["default"]["action"],
             "args" => []
         ];
     }

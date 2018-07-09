@@ -1,57 +1,41 @@
 <?php
 
-class App
+require "fancyRouter.php";
+
+class Application
 {
+    protected $router;
+
     function __construct()
     {
-        $this->bootstrap();
+        $this->router = new FancyRouter($this);
     }
 
-    function bootstrap()
-    {
-        $request = $this->checkRequest($this->parseURL());
-        $this->execRequest($request);
+    function start($uri=null) {
+        if(is_null($uri)) $uri = $_SERVER["REQUEST_URI"];
+        $this->startWithRequest($this->router->route($uri));
     }
 
-    function checkRequest($request)
-    {
-        if(!$this->isController($request["controller"])) {
-            $request = [
-                "controller" => "error",
-                "action" => "404"
-            ];
+    function startWithRequest($req) {
+        if($this->isController($req["controller"])) {
+            $controller = $this->getController($req["controller"]);
+            if($this->isActionOnController($controller, $req["action"])) {
+                try {
+                    $this->execActionOnController($controller, $req["action"]);
+                } catch(Exception $ex) {
+                    $this->handleError(500);
+                }
+                return;
+            }
         }
-        return $request;
+        $this->handleError(404);
     }
 
-    function parseURL()
-    {
-        $controller = $_GET["controller"];
-        if(!isset($_GET["controller"])) {
-            $controller = CONFIG["core"]["default"]["controller"]; // Default Controller
-        }
-        $action = $_GET["action"];
-        if(!isset($_GET["action"])) {
-            $action = CONFIG["core"]["default"]["action"]; // Default Controller Action
-        }
-        return array(
-            "controller" => $controller,
-            "action" => $action
-        );
-    }
-
-    function execRequest($request)
-    {
-        $controllerName = $request['controller'];
-        $actionName = $request['action'];
-
-        $controller = $this->getController($controllerName);
-
-        if(!$this->isActionOnController($controller, $actionName)) {
-            die("Action not found!");
-        }
-
-        $this->execActionOnController($controller, $actionName);
+    function handleError($code) {
+        $this->startWithRequest([
+            "controller" => "error",
+            "action" => $code
+        ]);
     }
 
     public function getController($controller)

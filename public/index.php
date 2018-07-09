@@ -2,4 +2,5 @@
 
 require(__DIR__ . "/../app/start.php");
 
-$app = new App();
+$app = new Application();
+$app->start();

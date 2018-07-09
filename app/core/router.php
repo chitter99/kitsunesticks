@@ -9,4 +9,5 @@ abstract class Router
     }
 
     abstract function route($uri);
+    abstract function link($controller, $action, $args);
 }
