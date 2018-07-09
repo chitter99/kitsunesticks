@@ -11,7 +11,7 @@ class FancyRouter extends Router
         echo "</pre>";
 
         $controller = !empty($matches[0][1]) ? $_GET["controller"] : CONFIG["core"]["default"]["controller"];
-        $action = !empty($matches[1][1]) ? $_GET["controller"] : CONFIG["core"]["default"]["controller"];
+        $action = !empty($matches[1][1]) ? $_GET["action"] : CONFIG["core"]["default"]["action"];
 
         return [
             "controller" => $controller,
