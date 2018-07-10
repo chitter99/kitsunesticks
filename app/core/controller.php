@@ -3,6 +3,12 @@
 class Controller
 {
     private $dependentServices = [];
+    private $app;
+
+    public function __construct($app)
+    {
+        $this->app = $app;
+    }
 
     protected function depend($service) {
         array_push($this->dependentServices, $service);
@@ -16,7 +22,16 @@ class Controller
         }
     }*/
 
-    protected function renderView($name) {
+    protected function renderView($name)
+    {
         require CONFIG["core"]["views"] . "/" . $name . ".php";
+    }
+
+    protected function redirect($controller, $action="index")
+    {
+        $this->app->startWithRequest([
+            "controller" => $controller,
+            "action" => $action
+        ]);
     }
 }

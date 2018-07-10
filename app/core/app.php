@@ -1,22 +1,32 @@
 <?php
 
-require "fancyRouter.php";
+require "basicRouter.php";
 
 class Application
 {
+    static protected $instance;
     protected $router;
 
     function __construct()
     {
-        $this->router = new FancyRouter($this);
+        $this->router = new BasicRouter($this);
+        self::$instance = $this;
     }
 
-    function start($uri=null) {
+    static public function getInstance()
+    {
+        if(self::$instance == null) return new Application();
+        return self::$instance;
+    }
+
+    function start($uri=null)
+    {
         if(is_null($uri)) $uri = $_SERVER["REQUEST_URI"];
         $this->startWithRequest($this->router->route($uri));
     }
 
-    function startWithRequest($req) {
+    function startWithRequest($req)
+    {
         if($this->isController($req["controller"])) {
             $controller = $this->getController($req["controller"]);
             if($this->isActionOnController($controller, $req["action"])) {
@@ -31,7 +41,8 @@ class Application
         $this->handleError(404);
     }
 
-    function handleError($code) {
+    function handleError($code)
+    {
         $this->startWithRequest([
             "controller" => "error",
             "action" => $code
@@ -42,8 +53,7 @@ class Application
     {
         $controllerName = $controller . "Controller";
         require(CONFIG["core"]["controllers"] . "/" . $controller . ".php");
-        $controller = new $controllerName;
-        //$controller->onLoad($this);
+        $controller = new $controllerName($this);
         return $controller;
     }
 
@@ -66,11 +76,16 @@ class Application
     public function getService($service)
     {
         require(CONFIG["core"]["services"] . "/" . $service . ".php");
-        return new $service;
+        return new $service($this);
     }
 
     public function isService($service)
     {
         return file_exists(CONFIG["core"]["services"] . "/" . $service . ".php");
+    }
+
+    public function link($controller, $action="index")
+    {
+        return $this->router->link($controller, $action, null);
     }
 }

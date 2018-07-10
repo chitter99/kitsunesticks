@@ -1,7 +1,11 @@
 <?php
 
 define("CONFIG", [
-    "db" => [],
+    "db" => [
+        "user" => "root",
+        "pass" => "",
+        "db" => "kitsunesticks"
+    ],
     "core" => [
         "default" => [
             "action" => "index",
